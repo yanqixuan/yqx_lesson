@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 定义了一个字体 */
+@font-face {
+    font-family: 'iconfont';  /* project id 1096736 */
+    src: url('//at.alicdn.com/t/font_1096736_xpvvjoouznh.eot');
+    src: url('//at.alicdn.com/t/font_1096736_xpvvjoouznh.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1096736_xpvvjoouznh.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1096736_xpvvjoouznh.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1096736_xpvvjoouznh.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1096736_xpvvjoouznh.svg#iconfont') format('svg');
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+.swiper-slide{
+    width: 300px;
+    height: 178px;
+    border-radius: 5px;
+    border: 1px coral solid;
+    background-color: rebeccapurple;
+    padding: 12px 16px;
+    box-sizing: border-box;
+}
+.swiper-slide.balance-plan{
+    /* 渐变 90度 */
+    background: linear-gradient(90deg,#ec6534,#f19e44);
+    color: #fff;
+}
+.swiper-slide.balance-plan header span{
+    display: block;
+}
+.swiper-slide.balance-plan header{
+    display: flex;
+    align-items: center;
+}
+.swiper-slide.balance-plan .slide-header__title{
+    flex: 1;        
+    /* flex 取值为一个非负数字，则该数字为 flex-grow 值，flex-shrink 取 1，flex-basis 取 0% */
+}
