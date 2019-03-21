@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <script>
+        // 构造函数
+        function EditInPlace(id, value, parentElement) {
+            this.id = id;
+            this.value = value;
+            this.parentElement = parentElement;
+            this.createElement(this.id);
+        }
+        
+        // 原型对象 创建对象
+        EditInPlace.prototype.createElement = function (id) {
+            this.containerElement = document.createElement('div');
+            this.containerElement.id = id;
+            this.parentElement.appendChild(this.containerElement);
+            // 值
+            this.staticElement = document.createElement('span');
+            this.staticElement.innerHTML = this.value;
+            this.containerElement.appendChild(this.staticElement);
+            //输入框
+            this.fieldElement = document.createElement('input');
+            this.fieldElement.type = 'text';
+            this.fieldElement.value = this.value;
+            this.containerElement.appendChild(this.fieldElement);
+            // 插入按钮
+            this.buttonElement = document.createElement('input');
+            this.buttonElement.type = 'button';
+            this.buttonElement.value = 'Save';
+            this.buttonElement2 = document.createElement('input');
+            this.buttonElement2.type = 'button';
+            this.buttonElement2.value = 'Cancel';
+            this.containerElement.appendChild(this.buttonElement);
+            this.containerElement.appendChild(this.buttonElement2);
+            // 默认是查看状态
+            this.converToText();
+            this.attachEvent();
+        }
+        
+        // 2个方法
+        EditInPlace.prototype.converToText = function () {
+            this.buttonElement.style.display = 'none';
+            this.buttonElement2.style.display = 'none';
+            this.fieldElement.style.display = 'none';
+            this.staticElement.style.display = 'inline';
+        }
+        EditInPlace.prototype.converToEditAble = function () {
+            this.buttonElement.style.display = 'inline';
+            this.buttonElement2.style.display = 'inline';
+            this.fieldElement.style.display = 'inline';
+            this.staticElement.style.display = 'none';
+        }
+        EditInPlace.prototype.saveToText = function () {
+            this.staticElement.innerHTML = this.fieldElement.value;
+            this.converToText();
+        }
+        EditInPlace.prototype.cancelConverToText = function () {
+            this.converToText();
+        }
+
+        // 事件监听调用
+        EditInPlace.prototype.attachEvent = function () {
+            // 箭头函数里的this是一个对象,不会改变
+            // function函数里的this是绑定事件的对象，普通函数里的this是不确定的,当触发时才会指定
+            this.staticElement.addEventListener('click', () => {
+                this.converToEditAble();
+            });
+            this.buttonElement.addEventListener('click', () => {
+                this.saveToText();
+            });
+            this.buttonElement2.addEventListener('click', () => {
+                this.cancelConverToText();
+            })
+        }
+
+        // 创建对象
+        const ed1 = new EditInPlace('ep1', '明德厚学,爱国荣校', document.getElementById('app'));
+        const ed2 = new EditInPlace('ep2', '顿本无事,充仪凤宫', document.getElementById('app'));
+    </script>
+</body>
+
+</html>
