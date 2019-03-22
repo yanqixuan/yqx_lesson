@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>shrink</title>
+    <style>
+        #content{
+            display: flex;
+            width: 500px;
+        }
+        #content div{
+            flex-basis: 200px;
+            border: 3px solid rgba(0, 0, 0, .2)
+        }
+        .box{
+            /* 设置为0 不缩小 */
+            flex-shrink: 0;
+        }
+        .box1{
+            flex-shrink: 2;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="box"style="background-color:red;">a</div>
+        <div class="box"style="background-color:yellow;">b</div>
+        <div class="box"style="background-color:green;">c</div>
+        <div class="box1"style="background-color:white;">d</div>
+        <div class="box1"style="background-color:blue;">e</div>
+    </div>
+</body>
+</html>
