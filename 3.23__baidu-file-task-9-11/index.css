@@ -1,0 +1,186 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+header {
+    background: url(./images/mount.png);
+    background-size: cover;
+}
+
+header .mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    overflow: hidden;
+}
+
+header .content {
+    height: 100%;
+    width: 970px;
+    margin: 104px auto 0;
+    color: rgba(255, 255, 255, .7);
+}
+
+/* hello world容器 */
+
+.hello .title p {
+    font-size: 31px;
+    font-family: Montserrat-ExtraLight;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 1);
+    line-height: 36px;
+    text-align: center;
+}
+
+.hello .title .text {
+    margin: 43px auto 0;
+    width: 383px;
+    height: 42px;
+    font-size: 10px;
+    font-family: Montserrat-ExtraLight;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 1);
+    line-height: 16px;
+    opacity: 0.3;
+    text-align: center;
+}
+
+.regist {
+    /* border-radius: 2px;
+    box-sizing: border-box;
+    margin: 52px auto 0;
+    width: 485px;
+    height: 250px;
+    border: 1px solid rgba(255,255,255,1);
+    opacity: 0.2;
+    padding: 30.5px 0 26px; */
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 2px;
+    margin-top: 104px;
+    padding: 61px 100px 52px;
+}
+
+.regist .title {
+    /* font-weight: 150px; */
+    font-family: Montserrat-Light;
+    text-align: center;
+    font-size: 16px;
+    line-height: 14px;
+}
+
+.regist .text {
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, .3);
+    margin: 19px auto 45px;
+}
+
+.regist .input input {
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, .2);
+    width: 292px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    color: #ffffff;
+    text-indent: 22px;
+}
+
+.regist .input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.regist .input input[type="button"] {
+    background-color: #fff;
+    color: #000;
+    /* 改变鼠标的样式 */
+    cursor: pointer;
+    text-indent: 0;
+}
+
+.introduce {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.introduce-content {
+    text-align: center;
+    padding-top: 79px;
+}
+
+.introduce-content .title {
+    color: rgba(0, 0, 0, 1);
+    font-size: 14px;
+}
+
+.introduce-content .text {
+    width: 657px;
+    font-size: 42px;
+    font-weight: 200;
+    color: rgba(20, 20, 20, 1);
+    line-height: 52px;
+    margin: 39px auto 0;
+}
+.introduce .section{
+    width: 986px;
+    margin: 85px auto 0;
+    padding-bottom: 102px;
+}
+.section-line{
+    display: flex;
+    justify-content: space-between;
+}
+.section .option{
+    box-sizing: border-box;
+    display: flex;
+}
+.section .option .icon{
+    margin-right: 31px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.section .option .icon.iphoneIcon{
+    width: 30px;
+    height: 49px;
+    background-image: url(./images/Iphone-Icon.png);
+}
+.section .option .icon.checkIcon{
+    width: 40px;
+    height: 37px;
+    background-image: url(./images/check-Icon.png);
+}
+.product-container{
+    background-color: #fff;
+    width: 100%;
+}
+.product-des{
+    
+    width: 975px;
+    margin: 0 auto;
+}
+.product-des .product-item{
+    display: flex;
+    align-items: center;
+}
+.product-des img{
+    width: 570px;
+    height: 350px;
+}
+.product-des .product-info{
+    width: 305px;
+    padding-left: 100px;
+}
+.product-des .product-item:last-child .product-info{
+    padding-right: 100px;
+    padding-left: 0;
+}
