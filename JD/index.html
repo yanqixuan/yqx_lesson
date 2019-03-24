@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>京东校园招聘</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./lib/odometer.css">
+</head>
+
+<body>
+    <audio src=""></audio>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide first">
+                <div class="title">
+                    <div class="slogon">
+                        这是一个互联网公司
+                    </div>
+                    <!-- <div class="title1"><h4>你很年轻</h4></div>
+                            <div class="title1"><h4>理应更快</h4></div>
+                            <div class="title2"> <p>Jumpstart<br>your<br>dreams</p> </div> -->
+                </div>
+            </div>
+            <div class="swiper-slide second">
+                <div class="bg"></div>
+                <div class="light"></div>
+                <div class="dog"></div>
+                <div class="text text-top">
+                    the speed of life
+                </div>
+                <div class="text text-bottom">
+                    <!-- 快才拥有可能 -->
+                </div>
+                <div class="num">
+                </div>
+            </div>
+            <div class="swiper-slide pg3">
+                <div class="bg"></div>
+                <div class="light"></div>
+                <div class="dog"></div>
+                <div class="text text-top"></div>
+                <div class="text text-bottom"></div>
+                <div class="num"></div>
+            </div>
+            <div class="swiper-slide p8">
+                <div class="logo-ran">燃</div>
+                <div class="text-slogon">
+                    更快到达你想要的未来
+                </div>
+                <div class="cube-cnt-2">
+                    <div class="cube-2">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="cube-cnt-3">
+                    <div class="cube-3">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="text-title">
+                    京东2018校园招聘
+                </div>
+                <div class="text-detail">
+                    招聘人群:2018<br>本科 硕士 博士
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+    <script src="./lib/odometer.min.js"></script>
+    <script>
+        const p2Num = document.querySelector('.second .num');
+        od = new Odometer({
+            el: p2Num,
+            value: 1.618,
+            format: '(,ddd).ddd',
+            theme: 'default'
+        });
+        const p3Num = document.querySelector('.pg3 .num');
+        od = new Odometer({
+            el:p3Num,
+            value: 0.1,
+            format:'(,dd).d',
+            theme:'default'
+        });
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical', // 垂直切换选项
+            loop: false, // 循环模式选项
+            on: {
+                slideChangeTransitionEnd: function () {
+                    if (this.activeIndex === 1) {
+                        p2Num.innerHTML = 0.004;
+                    }
+                    else if(this.activeIndex === 2){
+                        p3Num.innerHTML = 10.4;
+                    }
+                }
+            }
+        })        
+    </script>
+</body>
+
+</html>

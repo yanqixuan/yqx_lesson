@@ -1,0 +1,265 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 37.5px;
+}
+body{
+    font-size: 0.18rem;
+}
+html,body{
+    
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.swiper-container{
+    width: 100%;
+    height: 100%;
+}
+/* 第一屏 */
+.swiper-slide.first{
+    background-color: red;
+    position: relative;
+}
+.first .title,.first .slogon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.first .title{
+    width: 7.73rem;
+    height: 10.49rem;
+    background: url('http://wqs.jd.com/promote/201707/2018campus/img/p1-light_7df180.png') no-repeat;
+    background-size: 100% auto;
+    margin-left: -3.86rem;
+    margin-top: -5.2rem;
+}
+.first.swiper-slide-active .slogon{
+    animation: fadeInup .5s .3s both;
+}
+@keyframes fadeInup{
+    0%{
+        opacity: 0;
+        transform: translate3d(0,100%,0);
+    }
+    100%{
+        opacity: 1;
+        transform:none;
+    }
+}
+.first .slogon{
+    width: 2.74rem;
+    height: 2.44rem;
+    background-image: url('http://wqs.jd.com/promote/201707/2018campus/img/sprite.text_2b7b0a.png');
+    background-position: -5.38rem 0;
+    margin-left: -1.37rem;
+    margin-top: -1.68rem;
+    background-size: 51.58rem 2.44rem;
+    /* 首行文本缩进 */
+    text-indent: -133.32rem;
+}
+/* .swiper-slide.title{
+    width: 103px;
+    height: 91.5px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+} */
+/* second */
+.swiper-slide.second .bg,.second .light{
+    position: absolute;
+    left: 0;
+}
+.second .bg{
+    /* position: absolute; */
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('http://wqs.jd.com/promote/201707/2018campus/img/bg-scene-01_9c56fc.jpg') no-repeat bottom;
+    /* background-size: 100% auto; */
+    background-size: cover;
+}
+.second .light{
+    bottom: 0;
+    width: 8.7rem;
+    height: 15.14rem;
+    margin-left: -0.533rem;
+    margin-bottom: -1.6rem;
+    background: url('http://wqs.jd.com/promote/201707/2018campus/img/light-scene-01_bd4007.png') no-repeat;
+    background-size: 100% auto;
+}
+.second .dog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1.8rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    margin-top: -1.8rem;
+    background: url('http://wqs.jd.com/promote/201707/2018campus/img/dog-scene-01_8098ad.png') no-repeat;
+    background-size: 100% auto;
+}
+.second .text-top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1.2rem;
+    margin-top: 1.6rem;
+}
+.second .text-top{
+    text-indent: -133rem;
+}
+.second .text-top{
+    width: 1.58rem;
+    height: 0.56rem;
+    background: url('http://wqs.jd.com/promote/201707/2018campus/img/sprite.scene_c9deac.png') no-repeat;
+    background-position: -4.05rem 0;
+    margin-top: 4.26rem;
+}
+.second .text-bottom{
+    width: 3.4rem;
+    height: 1.85rem;
+    background: url('http://wqs.jd.com/promote/201707/2018campus/img/sprite.scene_c9deac.png') no-repeat;
+    background-position: -19.33rem 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 1.2rem;
+    margin-bottom: 1.33rem;
+}
+.second .text-top , .second .text-bottom{
+    background-size: 32.49rem 2.26rem;
+}
+/* p3 */
+.swiper-slide.pg3{
+    width: 100%;
+    height: 100%;
+    background: url('http://wqs.jd.com/promote/201707/2018campus/img/bg-scene-02_8a15db.jpg') no-repeat;
+    background-size:cover;
+}
+.pg3 .light{
+    position: absolute;
+    background: url('http://wqs.jd.com/promote/201707/2018campus/img/light-scene-02-1_0fe3a3.png') no-repeat;
+    margin-bottom: -10rem;
+    margin-left: -28rem;
+    left: -55px;
+    bottom: 0px;
+    width: 120%;
+    height: 20rem;
+    margin-left: -2.5px;
+    background-size: 120% auto;
+}
+.pg3 .dog{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4.6rem;
+    height: 9rem;
+    margin-left: -1rem;
+    margin-top: -4.2rem;
+    background: url('http://wqs.jd.com/promote/201707/2018campus/img/dog-scene-02_a8f96b.png') no-repeat;
+    background-size: 100% auto;
+}
+.pg3 .text-top{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 1.2rem;
+    margin-top: 1.6rem;
+}
+.pg3 .text-top{
+    text-indent: -133rem;
+}
+.pg3 .text-top{
+    width: 1.58rem;
+    height: 0.56rem;
+    background: url('http://wqs.jd.com/promote/201707/2018campus/img/sprite.scene_c9deac.png') no-repeat;
+    background-position: -4.05rem 0;
+    margin-top: 4.26rem;
+}
+.pg3 .text-bottom{
+    width: 3.4rem;
+    height: 1.85rem;
+    background: url('http://wqs.jd.com/promote/201707/2018campus/img/sprite.scene_c9deac.png') no-repeat;
+    background-position: -19.33rem 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 1.2rem;
+    margin-bottom: 1.33rem;
+}
+.pg3 .text-top , .pg3 .text-bottom{
+    background-size: 32.49rem 2.26rem;
+}
+/* p8 */
+.p8{
+    background-color: #ff1e00;
+}
+.p8 .logo-ran, .p8 .text-slogon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: -133.32rem;
+    margin-left: 0.853333rem;
+}
+.p8.swiper-slide-active .logo-ran{
+    animation: fadeInright .5s .3s both;
+}
+.p8.swiper-slide-active .text-slogon{
+    animation: fadeInright .5s .4s both;
+}
+.p8.swiper-slide-active .text-title{
+    animation: fadeInright .5s .6s both;
+}
+.p8.swiper-slide-active .text-detail{
+    animation: fadeInright .5s .8s both;
+}
+.p8 .logo-ran{
+    width: 1.9rem;
+    height: 1.73rem;
+    background-image: url('http://wqs.jd.com/promote/201707/2018campus/img/sprite.other_5adc1e.png');
+    background-position: -3.02rem 0;
+    margin-top: 1.6rem;
+    background-size: 14.56rem 4.64rem;
+}
+.p8 .text-slogon{
+    width: 5.7333rem;
+    height: 1.97333rem;
+    background-image: url('http://wqs.jd.com/promote/201707/2018campus/img/sprite.text_2b7b0a.png');
+    background-position: -31.73rem 0;
+    margin-top: 5.6333rem;
+    background-size: 51.58rem 2.44rem;
+}
+.p8 .text-detail,.p8 .text-title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 0.85rem;
+    color: #ffffff;
+}
+.p8 .text-title{
+    margin-top: 9.38rem;
+    width: auto;
+    height: auto;
+    font-size: 0.45rem;
+    background: none;
+}
+.p8 .text-detail{
+    margin-top: 10.26rem;
+    font-size: 0.266rem;
+    line-height: 1.8;
+}
+@keyframes fadeInright{
+    0%{
+        opacity: 0;
+        transform: translate3d(50%,0,0);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
