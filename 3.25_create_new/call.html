@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数是为实例服务的
+        // 另外的方式运行 this 指向谁
+        function Otaku(name ,age){
+            this.name=name;
+            this.age=age;
+        }
+        var obj = new Object();
+        // call为第一个参数服务,手动指定内部指针指向
+        Otaku.call(obj,'御寒',18)
+    </script>
+</body>
+</html>
