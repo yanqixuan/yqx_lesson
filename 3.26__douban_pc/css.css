@@ -1,0 +1,71 @@
+/* reset */
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote{
+    margin: 0;
+    padding: 0;
+}
+/* 超链接一般的状态 */
+a:link{
+    text-decoration: none;
+    color: #3377aa;
+}
+a:visited{
+    color: #666699;
+    text-decoration: none;
+}
+a:hover{
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #3377aa;
+}
+img{
+    border: 0;
+}
+a img{
+    border-width: 0;
+    vertical-align: middle;
+}
+h1,h2,h3,h4,h5,h6{
+    /* 标题字体不变大 */
+    font-size: 100%;
+    /* 不加粗 */
+    font-weight: normal;
+}
+h2{
+    font: 15px Arial, sans-serif;
+    color: #007722;
+    margin: 0 0 12px 0;
+    line-height: 150%;
+}
+/* 通用样式 */
+.mod{
+    margin-bottom: 30px;
+}
+.section{
+    padding: 10px 0;
+    margin-bottom: 30px;
+    min-height: 200px;
+}
+.wrapper{
+    width: 950px;
+    margin: 0 auto;
+}
+.section .side{
+    float: right;
+    width: 265px;
+    margin-left: 30px;
+    height: 200px;
+    background-color: antiquewhite;
+}
+.section .main{
+    height: 200px;
+    background-color: aquamarine;
+    /* 变成BFC */
+    overflow: hidden;
+}
+/* 组件 */
+/* 业务样式 */
+.pl{
+    font: 12px Arail,  sans-serif;
+    line-height: 150%;
+    color: #666666;
+}
