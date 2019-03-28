@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组find方法
+        const ages = [18,20,30,40];
+        const this_age=ages.find((age)=>{
+            return age === 10;
+        });
+        const this_ageIndex=ages.findIndex((age)=>{
+            return age === 10;
+        });
+        console.log(this_age,this_ageIndex); //找不到返回undefined，-1
+        const agess =[{
+            name:'李雷',age:18
+        },
+        {
+            name:'韩梅梅',age:30
+        },{
+            name:'李雷1',age:30
+        },{
+            name:'李雷2',age:18
+        }]
+        const agessIndex = agess.findIndex((agess)=>{
+            return agess.age===30;
+        })
+        const agessIndex2 = agess.findIndex((agess)=>{
+            return agess.age>=15;
+        })
+        console.log(agess[agessIndex].name);
+        console.log(agessIndex2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类数组</title>
+</head>
+<body>
+    <ul id='lists'>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        // 类数组
+        const lis=document.querySelectorAll('#lists li');
+        console.log(lis);
+        const lis_array = Array.from(lis);  //类数组转为真数组
+        console.log(lis_array);
+        const lisHTMLContent = lis_array.map(liNode =>parseInt(liNode.innerHTML,10));
+        // (liNode)=>{
+        //     return liNode.innerHTML;
+        // }
+        console.log(lisHTMLContent);
+        // 真数组
+        const arr=[1,2,3];
+        function foo(){
+            // 返回两倍的数组
+            console.log(arguments);
+            let arr = Array.from(arguments);
+            console.log(arr);
+            const arrHTML = arr.map(liNode =>parseInt(liNode,10)*2)
+            console.log(arrHTML);
+        }
+        foo(1,2,3,4,5);
+        // 大于10的数翻3倍
+        function fooo(){
+            let arr = Array.from(arguments);
+            const arrHTML = arr.map((list)=>{
+                if (list>=10)
+               return list*=3;
+               else 
+               return list;
+            })
+            console.log(arrHTML);
+        }
+        fooo(1,5,10);
+    </script>
+</body>
+</html>
