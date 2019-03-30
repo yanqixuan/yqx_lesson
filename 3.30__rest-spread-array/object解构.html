@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            name: 'lilei',
+            age: 32,
+            school: 'ecut',
+            foo: { bar: 'bar val' },
+            baz:['Hello',{msg:'World'}]
+        }
+        // es5
+        // var name = obj.name,age = obj.age;
+        // es6
+        // const {name,age} = obj;
+        const { age: this_age,
+            name,
+            foo: { bar },
+            baz:[hello,{msg:world}]     //定义变量再赋值的操作
+        } = obj;      //把obj.age赋值给了this_age，所以不存在age这个变量了
+    </script>
+</body>
+
+</html>
