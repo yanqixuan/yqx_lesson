@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .row-demo {
+            background-color: green;
+        }
+
+        .col-demo {
+            border: 1px solid #000;
+            font-size: 25px;
+            height: 30px;
+        }
+
+        .col-demo2 {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-demo">
+            <!-- 总共分成12份 -->
+            <div class="col-1 col-2 col-4 col-md-6 col-lg-8 col-demo">
+                <!-- col-md-6  中屏时占6份      col-lg-8  大屏时占8份 -->
+                4
+            </div>
+            <div class="col-8 col-md-6 col-lg-4 col-demo2">
+                8
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
