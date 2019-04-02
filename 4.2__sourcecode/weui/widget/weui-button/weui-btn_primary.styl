@@ -1,0 +1,9 @@
+@import '../../base/fn'
+
+.weui-btn_primary
+    background-color $weuiBtnPrimaryBg
+    &:not(.weui-btn_disabled):visited   //访问过后的状态设定
+        color $weuiBtnFontColor
+    &:not(.weui-btn_disabled):active    //当有.weui-btn_disabled类时  不生效
+        color $weuiBtnActiveFontColor
+        background-color $weuiBtnPrimaryActiveBg
