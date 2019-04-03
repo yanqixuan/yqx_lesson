@@ -1,0 +1,30 @@
+$hdbg_color = #e54847
+$font_color_white = #fff
+
+html,body
+    width 100%
+    .nav
+        height 1.067rem
+        font-size 18px
+        text-align center
+        background-color $hdbg_color
+        padding 6px
+        box-sizing border-box
+        .arrow-left
+            float left
+            height 100%
+            position relative
+            &:after
+                content ''
+                width 12px
+                height 12px
+                position absolute
+                top 50%
+                left 16px
+                border 2px solid $font_color_white
+                border-width 0 0 2px 2px
+                box-sizing border-box
+                transform rotate(45deg) translateY(-50%)
+        span
+            color $font_color_white
+            display inline-block
