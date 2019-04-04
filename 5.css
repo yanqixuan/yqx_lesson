@@ -1,0 +1,25 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f00;
+}
+.page .header.title {
+  display: flex;
+}
+.page {
+  height: 100%;
+  width: 100%;
+}
+.page .faces {
+  background-color: #f00;
+  border: 1px solid #000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url("./pic/superMe.png");
+  background-size: cover;
+}
+.page .name {
+  background-color: #f00;
+}
