@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="webglcanvas" width="500" height="500"></canvas>
+    <script src="https://cdn.bootcss.com/three.js/r83/three.min.js"></script>
+    <script>
+        var canvas = document.getElementById('webglcanvas'),
+            group = new THREE.Group();
+            group1 = new THREE.Group();
+        scene = new THREE.Scene(),
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);
+        renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            antialias: true //抗锯齿
+        });/*渲染器*/
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        // document.body.appendChild( renderer.domElement );
+        init();
+        draw();
+        render();
+        function init() {
+            scene.add(group);
+            scene.add(group1);
+            scene.background = new THREE.Color(0xf0f0f0);
+            camera.position.z = 2000;
+            // camera.position.x = -2000;
+            camera.position.y = 2000;
+            var loader = new THREE.TextureLoader();/*材质  纹理加载器*/
+            loader.load('sun.jpg', function (texture) {
+                var geometry = new THREE.SphereGeometry(100, 20, 20)  //球型   离屏幕500,位置20，20
+                var material = new THREE.MeshBasicMaterial({ map: texture })  //材质  将图片解构成THREE能理解的材质
+                var mesh = new THREE.Mesh(geometry, material);
+                group.add(mesh);
+            })
+            loader.load('water.jpg', function (texture) {
+                var geometry = new THREE.SphereGeometry(0, 20, 20)  //球型   离屏幕500,位置20，20
+                var material = new THREE.MeshBasicMaterial({ map: texture })  //材质  将图片解构成THREE能理解的材质
+                var mesh = new THREE.Mesh(geometry, material);
+                mesh.position.x -= 200;
+                group1.add(mesh);
+            })
+            loader.load('jin.jpg', function (texture) {
+                var geometry = new THREE.SphereGeometry(0, 20, 20)  //球型   离屏幕500,位置20，20
+                var material = new THREE.MeshBasicMaterial({ map: texture })  //材质  将图片解构成THREE能理解的材质
+                var mesh = new THREE.Mesh(geometry, material);
+                mesh.position.x -= 400;
+                group.add(mesh);
+            })
+            loader.load('earth.jpg', function (texture) {
+                var geometry = new THREE.SphereGeometry(0, 20, 20)  //球型   离屏幕500,位置20，20
+                var material = new THREE.MeshBasicMaterial({ map: texture })  //材质  将图片解构成THREE能理解的材质
+                var mesh = new THREE.Mesh(geometry, material);
+                mesh.position.x -= 600;
+                group.add(mesh);
+            })
+            loader.load('fire.jpg', function (texture) {
+                var geometry = new THREE.SphereGeometry(0, 20, 20)  //球型   离屏幕500,位置20，20
+                var material = new THREE.MeshBasicMaterial({ map: texture })  //材质  将图片解构成THREE能理解的材质
+                var mesh = new THREE.Mesh(geometry, material);
+                mesh.position.x -= 800;
+                group.add(mesh);
+            })
+            loader.load('mu.jpg', function (texture) {
+                var geometry = new THREE.SphereGeometry(0, 20, 20)  //球型   离屏幕500,位置20，20
+                var material = new THREE.MeshBasicMaterial({ map: texture })  //材质  将图片解构成THREE能理解的材质
+                var mesh = new THREE.Mesh(geometry, material);
+                mesh.position.x -= 1000;
+                group.add(mesh);
+            })
+            loader.load('tu.jpg', function (texture) {
+                var geometry = new THREE.SphereGeometry(0, 20, 20)  //球型   离屏幕500,位置20，20
+                var material = new THREE.MeshBasicMaterial({ map: texture })  //材质  将图片解构成THREE能理解的材质
+                var mesh = new THREE.Mesh(geometry, material);
+                mesh.position.x -= 1200;
+                group.add(mesh);
+            })
+            loader.load('tianwang.jpg', function (texture) {
+                var geometry = new THREE.SphereGeometry(0, 20, 20)  //球型   离屏幕500,位置20，20
+                var material = new THREE.MeshBasicMaterial({ map: texture })  //材质  将图片解构成THREE能理解的材质
+                var mesh = new THREE.Mesh(geometry, material);
+                mesh.position.x -= 1400;
+                group.add(mesh);
+            })
+            loader.load('haiwang.jpg', function (texture) {
+                var geometry = new THREE.SphereGeometry(0, 20, 20)  //球型   离屏幕500,位置20，20
+                var material = new THREE.MeshBasicMaterial({ map: texture })  //材质  将图片解构成THREE能理解的材质
+                var mesh = new THREE.Mesh(geometry, material);
+                mesh.position.x -= 1600;
+                group.add(mesh);
+            })
+        }
+        function draw() {
+            var curve = new THREE.EllipseCurve(
+                0, 0,            // ax, aY
+                10, 10,           // xRadius, yRadius
+                0, 2 * Math.PI,  // aStartAngle, aEndAngle
+                false,            // aClockwise
+                0                 // aRotation 
+            );
+            var path = new THREE.Path(curve.getPoints(50));
+            var geometry = path.createPointsGeometry(50);
+            var material = new THREE.LineBasicMaterial({ color:0xf0f0f0});
+            // Create the final Object3d to add to the scene
+            var ellipse = new THREE.Line(geometry, material);
+            scene.add(ellipse);
+        }
+        function render() {
+            requestAnimationFrame(render);
+            scene.rotation.y += 0.1;
+            group1.rotation.y -= 0.11;
+            renderer.render(scene, camera);
+            camera.lookAt(scene.position);
+        }
+        function Animation() {
+
+        }
+    </script>
+</body>
+
+</html>
