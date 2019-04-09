@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xhr = null;
+        if(window.XMLHttpRequest){  //如果浏览器有支持这个方法  浏览器自带的一个方法  支持发送和接受数据请求
+            xhr = new XMLHttpRequest()
+        } else {        //如果不支持 (IE)
+            xhr = new ActiveXObject("Micosoft.XMLHTTP")
+        }
+        // 原生JS获取接口的方法,准备工作。
+        xhr.open('get','mock.json',true)  //open方法  get方式  url  同步还是异步   true为异步  false同步
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");   //定义请求格式
+        // 发送请求到服务器
+        xhr.send();
+        // console.log(xhr.responseText);
+        // console.log(xhr.readyState,xhr.status);     //readyState状态从0开始  status状态码 200一般代表请求成功
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == 4&&xhr.status == 200){
+                console.log(xhr.responseText);
+            }
+        }
+        console.log(123456);
+    </script>
+</body>
+</html>
