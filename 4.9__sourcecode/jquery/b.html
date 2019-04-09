@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>司徒正美</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+</head>
+<body>
+  <!-- 先解析成node节点，再添加css，再显示在网页上 -->
+  <div id="root"></div> 
+  <script>
+    // 浏览器的页面渲染机制   DOM Ready 事件
+    function $(selector){
+      if(typeof selector === 'function'){
+        document.addEventListener('DOMContentLoaded',selector);//事件交给事件处理函数
+      }else if (typeof selector === 'string'){
+        // $() 函数  运行结果的类型   再调用这个类型的原型链上的方法
+        // 这里是字符串  所以没有.html方法  
+        // 通过返回一个对象  这个对象中有html方法就能调用
+
+        function JQueryEle(ele){
+          this.ele = ele;
+          this.html = function(str){
+            this.ele.innerHTML =str;
+          }
+        }
+        // JQueryEle.prototype.html = function(str){
+        //   this.ele.innerHTML = str;
+        // }
+
+        const jQuery = {}; //json object/命名空间    这个框架名字为jQuery
+        jQuery.wrapper = function(ele){
+          // 将ele对象封装于此
+          // jquery中的节点对象 不是简单的html节点，而是一个jQuery对象
+          const jqueryEle = new JQueryEle(ele);
+          return jqueryEle;
+        }
+
+        const ele = document.querySelector(selector);
+        if (ele){
+          // 推论
+          return new jQuery.wrapper(ele);
+        }
+        
+      }
+    }
+    $(function(){
+      console.log('DOM Ready');
+      $('#root').html('<h1>猛猛猛</h1>');
+    })
+  </script>
+</body>
+</html>
