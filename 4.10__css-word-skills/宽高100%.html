@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>宽高</title>
+    <style>
+        /* html,body{
+            height: 100%;
+            width: 100%;
+        } */
+        .container{
+            /* 只设这两个属性无效  因为父元素没有设宽高 */
+            width: 100%;
+            height: 100%;
+            /* 找到父级一个非static元素定位  找不到则相对于视窗 */
+            position: absolute;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+</body>
+</html>

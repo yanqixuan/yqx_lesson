@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>凹凸</title>
+    <style>
+        .ao{
+            width: 0;
+        }
+        .ao::before{
+            /* 根据伪元素的换行规则  英文数字不换行  中文自动换行  空格换行*/
+            content: 'love大yy love';
+            outline: 2px solid pink;
+            /* color: #ffffff; */
+        }
+
+        .tu{
+            width: 0;
+        }
+        .tu::after{
+            content: 'y yyy y';
+            outline: 2px solid pink;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="ao"></div>
+    <div class="tu"></div>
+</body>
+</html>
