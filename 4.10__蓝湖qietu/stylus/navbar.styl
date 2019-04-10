@@ -1,0 +1,47 @@
+.ui.navbar
+    background-color #fff
+    .content
+        display flex
+        flex-direction  row
+        align-items center
+        position relative
+        overflow hidden
+        .header > img
+            width 98px
+        .menu
+            margin-left 103px
+            .item
+                display inline-block
+                font-size:18px;
+                font-weight:300;
+                color:rgba(0,0,0,1);
+                line-height:25px;
+                padding-top 26px
+                padding-bottom 35px
+                &:not(:first-child)
+                    margin-left 64px
+                &.active
+                    border-bottom 2px solid #000
+        .search-icon
+            flex 1
+            text-align right
+// 媒体查询
+// 大于767时不显示选项按钮
+@media only screen and (min-width:767px)
+    .ui.navbar
+        .menu-icon
+            display none
+
+// 屏幕小于767时不显示菜单
+@media only screen and (max-width:767px)
+    .ui.navbar
+        // .header img
+            // width 6px
+        .content .menu
+            display none
+            padding-top 9px
+        .content
+            justify-content space-between
+            .search-icon
+                flex 0
+
