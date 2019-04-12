@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 定义了一个字体 */
+@font-face {
+    font-family: 'iconfont';  /* project id 1096736 */
+    src: url('//at.alicdn.com/t/font_1096736_xpvvjoouznh.eot');
+    src: url('//at.alicdn.com/t/font_1096736_xpvvjoouznh.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1096736_xpvvjoouznh.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1096736_xpvvjoouznh.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1096736_xpvvjoouznh.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1096736_xpvvjoouznh.svg#iconfont') format('svg');
+  }
+  @font-face {
+    font-family: 'iconfont';  /* project id 1096742 */
+    src: url('//at.alicdn.com/t/font_1096742_wqxfkj3n05s.eot');
+    src: url('//at.alicdn.com/t/font_1096742_wqxfkj3n05s.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1096742_wqxfkj3n05s.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1096742_wqxfkj3n05s.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1096742_wqxfkj3n05s.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1096742_wqxfkj3n05s.svg#iconfont') format('svg');
+  }
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+.swiper-slide{
+    width: 300px;
+    height: 178px;
+    border-radius: 5px;
+    border: 1px coral solid;
+    background-color: rebeccapurple;
+    padding: 12px 16px;
+    box-sizing: border-box;
+}
+.swiper-slide.balance-plan{
+    /* 渐变 90度 */
+    background: linear-gradient(90deg,#ec6534,#f19e44);
+    color: #fff;
+}
+.swiper-slide.dream{
+    background: linear-gradient(90deg,#711cc1,#9b1cc1);
+    color: #fff;
+}
+.swiper-slide header span{
+    display: block;
+}
+.swiper-slide header{
+    display: flex;
+    align-items: center;
+}
+.swiper-slide .slide-header__title{
+    margin-left: 3px;
+    flex: 1;        
+    /* flex 取值为一个非负数字，则该数字为 flex-grow 值，flex-shrink 取 1，flex-basis 取 0% */
+}
+.slide-main__title{
+    position: relative;
+    top: 20px;
+}
+.slide-main__btn{
+    font-size: 14px;
+    border-radius: 50px;
+    padding: 10px 25px;
+    background-color: rgb(255, 187, 0);
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.dream .slide-main__btn{
+    color: #711cc1;
+    background-color: gold;
+}
+.dream .text{
+    color: gold;
+}
+ul li{
+    font-size: 12px;
+    list-style: none;
+}
+.slide-mainWrapper{
+    /* height: 26px; */
+    /* width: 200px; */
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 20px;
+}
+.slide-mainWrapper__main p{
+    font-size: 11px;
+    /* position: relative;
+    top: 20px; */
+}
+.slide-mainWrapper__aside{
+    padding-right: 70px;
+}
+.slide-mainWrapper__center{
+    padding-top: 6px;
+    transform: scaleY(1.8);
+    color: rgba(0, 0, 0, 0.3);
+}
+.swiper-slide.money{
+    background: linear-gradient(90deg,#e7c47b,#f9d68d);
+
+}
+.money h4{
+    color: #7e5711;
+}
+.money .slide-main__btn{
+    background-color: #fef0be;
+    color: #7e5711;
+}
