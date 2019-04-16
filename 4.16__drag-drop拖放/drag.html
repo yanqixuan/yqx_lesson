@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 5px solid greenyellow;
+        }
+        .box:last-child{
+            margin-top: 30px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1" draggable="true">
+        <p>辣条</p>
+    </div>
+    <div class="box" id="box2" draggable="true">
+        <img src="http://ppsm0t3x8.bkt.clouddn.com/wonniu.jpg" alt="">
+    </div>
+    <script>
+        // dragstart  drag  dragend 源对象上/拖动的对象
+        // 目标对象  放开的地方的对象  dragenter dragover dragleave drop
+        const box1 = document.getElementById('box1');
+        const box2 = document.getElementById('box2');
+
+        const boxs = document.querySelectorAll('.box');
+        let srcDiv = null;
+        for(let i=0,length = boxs.length;i<length;i++){
+            let box = boxs[i];
+            box.addEventListener('dragstart',function(event){
+                console.log('dragStart');
+                srcDiv = this;
+                // 源对象 和 目标对象之间传输数据
+                event.dataTransfer.setData('text/html',this.innerHTML);  //规定内容的类型 text/html
+            })
+            box.addEventListener('drag',function(){
+                console.log('drag');
+            })
+            box.addEventListener('dragend',function(){
+                console.log('dragend');
+            })
+
+            // 目标对象
+            box.addEventListener('dragover',function(event){    //当拖拽时鼠标在元素上一直触发
+                console.log('dragover')
+                event.preventDefault(); //阻止默认事件
+            })
+            box.addEventListener('dragenter',function(){        //拖拽元素进入这个元素时触发一次
+                console.log('dragenter')
+            })
+            box.addEventListener('dragleave',function(){        //拖拽时 鼠标离开这个元素
+                console.log('dragleave')
+            })
+            box.addEventListener('drop',function(event){        //放到这个元素上时触发一次
+                console.log('drop');
+                srcDiv.innerHTML = this.innerHTML;  //srcDiv 辣条  this:表情包
+                this.innerHTML = event.dataTransfer.getData('text/html');
+            })
+        }
+        // box1.addEventListener('dragstart',function(event){
+            
+        // })
+        // box2.addEventListener('dragover',function(event){
+        //     event.defaultPrevented();
+        // })
+        // box2.addEventListener('drop',function(event){
+        //     this.innerHTML = box1.innerHTML;
+        // })
+    </script>
+</body>
+</html>
