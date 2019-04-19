@@ -1,0 +1,7 @@
+<view class="container battle-list">
+    <block wx:for="{{Battle}}">
+        <view class="Battles">
+            KDA:{{item.KDA}}
+        </view>
+    </block>
+</view>
