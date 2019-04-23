@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Throttle 防抖</title>
+</head>
+<body>
+    <div class="row">
+        <input type="text" id="unDebounce">
+    </div>
+    <div class="row">
+        <input type="text" id="debounce">
+    </div>
+
+    <script>
+        function ajax(content){
+            // XMLHttpRequest   异步 主动请求   会给服务器端带来压力
+            console.log('ajax request'+content);
+        }
+        let inputa = document.getElementById('unDebounce');
+        let debounceA = document.getElementById('debounce');
+        inputa.addEventListener('keyup',function(e){
+            ajax(e.target.value);   //搜索  事件对象的值
+        })
+        debounceA.addEventListener('keyup',function(e){
+            // 不能直接ajax  
+            // ajax(e.target.value);
+            debounceAjax(e.target.value);
+        })
+        var debounceAjax = debounce(ajax,1000);
+        /**
+         * @功能    防抖    为了性能优化
+         * 接受一个参数 @param func function
+         * @param   delay   number
+         * @return  function
+        */
+        function debounce(func,delay){
+            let i = 0;
+            return function(args){
+                i++;
+                console.log('clear',func.id,i)
+                clearTimeout(func.id); //在0.5s内不执行keyup则会输出   执行则会清除timeout
+                var that = this;
+                func.id = setTimeout(function(){
+                    func(args);
+                    func.call(that,args);
+                }, delay);
+                console.log(func.id,'---',i)
+            }
+        }
+    </script>
+</body>
+</html>
