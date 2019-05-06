@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        .content .item {
+            flex: 1;
+            height: 260px;
+            margin: 10px;
+            border: 1px solid #CECECE;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .content .item .avatar img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .content .item .info {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        #app {
+            font-family: "Avenir", Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 60px;
+        }
+
+        .main {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main .gauntlet {
+            height: 100px;
+        }
+
+        .main .gauntlet-item {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+        }
+
+        .main #gauntlet-snap {
+            background: transparent url(https://yiliang114.github.io/vue-thanos-snap/images/thanos_snap.png) center left no-repeat;
+            background-position: 0 0;
+        }
+
+        .main .snaping {
+            -webkit-animation: gauntlet 2.8s steps(47) both;
+            animation: gauntlet 2.8s steps(47) both;
+        }
+
+        @-webkit-keyframes gauntlet {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -3760px 0;
+            }
+        }
+
+        .main #gauntlet-reverse {
+            background: transparent url('https://yiliang114.github.io/vue-thanos-snap/images/thanos_reverse.png') center left no-repeat;
+            background-position: 0 0;
+        }
+
+        .main .reversing {
+            -webkit-animation: gauntlet 2.8s steps(47) both;
+            animation: gauntlet 2.8s steps(47) both;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="main">
+        <!-- {{hero}} -->
+        <Snap />
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script src="./heroes.js"></script>
+    <script>
+        // M V VM
+        // 组件思维
+        Vue.component('Snap', {//定义一个组件
+            // 组件分成三部分
+            template: `
+        <div class="main">
+            <div class="gauntlet">
+                <div class="gauntlet-wrapper">
+                    <div class="gauntlet-item" id="gauntlet-snap" v-if="showSnap" :class="snaping ? 'snaping':'' " @click="snapHandle">
+                        
+                    </div>
+                    <div class="gauntlet-item" id="gauntlet-reverse" v-if="showReverse" :class="reversing ? 'reversing':'' " @click="reverseHandle">
+                        
+                    </div>
+                </div>
+            </div>
+            <audio preload ref="allAudio"/>
+            <Content :heroes="heroes"/>
+        </div>`,
+            data() {
+                return {
+                    showSnap: true,
+                    showReverse: false,
+                    snaping: false,
+                    reversing: false,
+                    heroes
+                }
+            },
+            methods: {
+                snapHandle() {
+                    this.snaping = true;
+                    setTimeout(() => {
+                        this.showSnap = false;
+                        this.showReverse = true;
+                        this.snaping = false;   //维护状态正确性
+                    }, 3000);
+                    const audio = this.$refs.allAudio;    //得到所有有ref属性的集合
+                    audio.src = "https://yiliang114.github.io/vue-thanos-snap/media/thanos_snap_sound.b746c7d7.mp3";
+                    audio.play();
+                },
+                reverseHandle() {
+                    this.reversing = true;
+                    setTimeout(() => {
+                        this.showReverse = false;
+                        this.showSnap = true;
+                        this.reversing = false; //维护状态
+                    }, 3000);
+                    const audio = this.$refs.allAudio;
+                    audio.src = "https://yiliang114.github.io/vue-thanos-snap/media/thanos_reverse_sound.e00730e1.mp3";
+                    audio.play();
+                }
+            }
+        })
+        Vue.component('Content', {
+            // 外部传入的数据
+            props:{
+                heroes:{
+                    type:Array
+                }
+            },
+            template: `
+            <div class="content">
+                <div class="item" v-for="(hero,index) in heroes">
+                    <div class="item-body">
+                        <div class="avatar">
+                            <img :src="hero.src"/>
+                        </div>
+                        <div class="info">
+                            {{ hero.name }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `,
+            data() {
+                return {
+                    // heroes
+                }
+            }
+        })
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    hero: '灭霸'
+                }
+            }
+        }) 
+    </script>
+</body>
+
+</html>
