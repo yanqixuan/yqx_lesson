@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        const app = document.getElementById('app');
+        var s = Symbol();
+        let es5Map = {
+            name:'lihua',
+            [s]:133,
+            [app]:456
+        }
+        // app toString() 之后失去原来的意义
+        console.log(Object.keys(es5Map));
+
+
+        const query = '?name=lihua&age=13'
+        // 返回一个map
+        const queryObj = new URLSearchParams(query);
+        console.log(queryObj.get('name'))
+
+
+
+        let map = new Map();
+        map.set('name','lihua');
+        map.set('age','13');
+        map.set(app,456);   //能够正确拿到app节点
+        // map.delete('name')
+        console.log('name:',map.get('name'));
+        console.log('is name ?',map.has('name'));
+        console.log('keys',map.keys());
+        console.log('values',map.values());
+        console.log('k,v',map.entries())
+
+        for(let [k,v] of map.entries()){
+            console.log('val',k,v);
+        }
+
+        console.log(map)
+    </script>
+</body>
+</html>

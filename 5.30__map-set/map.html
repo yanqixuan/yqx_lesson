@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lists">
+
+    </ul>
+    <script>
+        const listsNode = document.getElementById('lists');
+        const lists = [
+            {name:'梨花',age:23,sex:'女',hobby:'rap jump basketball',a:1},
+            {name:'梨花',age:34,sex:'女',hobby:'sing'}
+        ];
+        const map = {
+            name:'姓名',age:'年龄',sex:'性别',hobby:'爱好'
+        }
+
+        // 版本一
+        // listsNode.innerHTML = lists.map(user=>
+        //     `
+        //     <li>name:${user.name},
+        //         age:${user.age},
+        //         sex:${user.sex}</li>
+        //     `
+        // ).join('');
+
+        // 版本二
+        listsNode.innerHTML=lists.map(user=>{
+            const keys = Object.keys(user);
+            const userStr = keys.map(key=>{
+                // 转中文
+                // let keyCH = '';
+                // if(key === 'name'){
+                //     keyCH = '姓名';
+                // } else if (key === 'age'){
+                //     keyCH = '年龄';
+                // } else {
+                //     keyCH = key;
+                // }
+            return `
+            ${map[key] || '未知'}:${user[key]}
+            `
+            }
+            ).join(',')
+            return `<li>${userStr}</li>`;
+        }).join('');
+    </script>
+</body>
+</html>
